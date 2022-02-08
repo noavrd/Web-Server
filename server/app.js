@@ -27,6 +27,17 @@ app.get('/allTitles', async (req, res) => {
   }
 });
 
+app.put('/updateTitle', async (req, res) => {
+  try {
+    const { _id, title } = req.body;
+    const updateTitle = await Task.findByIdAndUpdate({ _id }, { title });
+    updateTitle.save();
+    res.send('Updated successfully');
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
 app.delete('/deleteTitle', async (req, res) => {
   try {
     const { _id } = req.body;

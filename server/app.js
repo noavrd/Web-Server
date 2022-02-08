@@ -26,4 +26,15 @@ app.get('/allTitles', async (req, res) => {
     res.status(500).send(err);
   }
 });
+
+app.delete('/deleteTitle', async (req, res) => {
+  try {
+    const { _id } = req.body;
+    const deleteTitle = await Task.findByIdAndDelete({ _id });
+    deleteTitle.save();
+    res.send('Deleted successfully');
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
 module.exports = app;

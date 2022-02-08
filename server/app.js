@@ -17,4 +17,13 @@ app.post('/add', async (req, res) => {
     res.status(500).send(err);
   }
 });
+
+app.get('/allTitles', async (req, res) => {
+  try {
+    const allTitles = await Task.find({});
+    res.send(allTitles);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
 module.exports = app;

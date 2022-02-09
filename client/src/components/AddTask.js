@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 
-export default function AddTask() {
+export default function AddTask({ setChanged }) {
   const BASE_URL = 'http://localhost:8080';
 
   const [newTask, setNewTask] = useState('');
@@ -21,6 +21,7 @@ export default function AddTask() {
         console.log('Added Successfully');
         setNewTask('');
         setError('');
+        setChanged(true);
       })
       .catch((err) => console.log(err));
   };

@@ -1,0 +1,23 @@
+.add-task {
+  margin-left: 30vw;
+}
+.add-task-input {
+  margin-top: -5vh;
+  width: 37vw;
+  font-size: 5vh;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.add-task-input:focus {
+  outline: none;
+}
+
+.add-task-btn {
+  background: transparent;
+  border: transparent;
+  font-size: 5vh;
+  cursor: pointer;
+  width: 2vw;
+  border-bottom: 1px solid black;
+}

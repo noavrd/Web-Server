@@ -26,7 +26,7 @@ export default function Main() {
   }, [changed]);
   return (
     <div>
-      <h1>Tasks</h1>
+      <h1>What is your focus for today?</h1>
       <AddTask setChanged={setChanged} />
       {tasks.map((task, i) => (
         <SingleTask

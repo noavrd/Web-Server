@@ -1,10 +1,11 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-
+import '../styles/task.css';
 export default function SingleTask({ title, id, setChanged }) {
   const [update, setUpdate] = useState(false);
   const [inputValue, setInputValue] = useState(title);
   const BASE_URL = 'http://localhost:8080';
+
   const deleteHandler = () => {
     axios
       .delete(`${BASE_URL}/deleteTitle`, { data: { _id: id } })
@@ -32,13 +33,19 @@ export default function SingleTask({ title, id, setChanged }) {
   return (
     <div>
       {!update ? (
-        <div>
+        <div className="single-task">
           <span>{title}</span>
-          <i className="fa fa-trash-o" onClick={() => deleteHandler()}></i>
-          <i className="fas fa-pencil-alt" onClick={() => setUpdate(true)}></i>
+          <span>
+            <i
+              className="fa fa-trash-o click"
+              onClick={() => deleteHandler()}></i>{' '}
+            <i
+              className="fas fa-pencil-alt click"
+              onClick={() => setUpdate(true)}></i>
+          </span>
         </div>
       ) : (
-        <div>
+        <div className="single-task">
           <input
             value={inputValue}
             onChange={(e) => {
@@ -48,9 +55,11 @@ export default function SingleTask({ title, id, setChanged }) {
             }}
           />
           <i
-            className="fa-solid fa-floppy-disk"
+            className="fa-solid fa-floppy-disk click"
             onClick={() => updateHandler()}></i>{' '}
-          <i className="fa-solid fa-x" onClick={() => setUpdate(false)}></i>
+          <i
+            className="fa-solid fa-x click"
+            onClick={() => setUpdate(false)}></i>
         </div>
       )}
     </div>

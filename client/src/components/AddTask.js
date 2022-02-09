@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
+import '../styles/addTask.css';
 
 export default function AddTask({ setChanged }) {
   const BASE_URL = 'http://localhost:8080';
@@ -28,16 +29,22 @@ export default function AddTask({ setChanged }) {
 
   return (
     <>
-      <input
-        placeholder="Enter New Task"
-        onChange={(e) => {
-          newTask === '' &&
-            (e.target.value = e.target.value.charAt(0).toUpperCase());
-          setNewTask(e.target.value);
-        }}
-        value={newTask}
-      />
-      <button onClick={() => clickHandler()}>+</button>
+      <div className="add-task">
+        <input
+          className="add-task-input"
+          // placeholder="Enter New Task"
+          onChange={(e) => {
+            newTask === '' &&
+              (e.target.value = e.target.value.charAt(0).toUpperCase());
+            setNewTask(e.target.value);
+          }}
+          value={newTask}
+          onKeyPress={(e) => e.key === 'Enter' && clickHandler()}
+        />
+        <button className="add-task-btn" onClick={() => clickHandler()}>
+          +
+        </button>
+      </div>
       <div>{error}</div>
     </>
   );

@@ -1,0 +1,13 @@
+.single-task {
+  text-align: left;
+  margin-left: 30vw;
+  margin-top: 1vh;
+  font-size: 3vh;
+  display: grid;
+  grid-template-columns: 35vw 9vw;
+}
+
+.click {
+  cursor: pointer;
+  margin-left: 0.5vw;
+}

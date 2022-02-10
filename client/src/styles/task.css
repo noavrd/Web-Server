@@ -2,7 +2,7 @@
   text-align: left;
   margin-left: 30vw;
   margin-top: 1vh;
-  font-size: 3vh;
+  font-size: 3.5vh;
   display: grid;
   grid-template-columns: 35vw 9vw;
 }
@@ -10,4 +10,24 @@
 .click {
   cursor: pointer;
   margin-left: 0.5vw;
+}
+
+.single-input {
+  width: 35vw;
+  font-size: 3.5vh;
+  border: none;
+  color: rgb(136, 130, 130);
+}
+
+.single-input:focus {
+  outline: none;
+}
+
+.edit {
+  border-bottom: 1px solid rgb(136, 130, 130);
+  width: 39vw;
+}
+
+.fa-x {
+  color: brown;
 }

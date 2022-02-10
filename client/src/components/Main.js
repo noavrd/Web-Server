@@ -25,17 +25,22 @@ export default function Main() {
     }
   }, [changed]);
   return (
-    <div>
-      <h1>What is your focus for today?</h1>
-      <AddTask setChanged={setChanged} />
-      {tasks.map((task, i) => (
-        <SingleTask
-          title={task.title}
-          id={task._id}
-          setChanged={setChanged}
-          key={i}
-        />
-      ))}
+    <div className="total">
+      <div className="block">
+        <h1>What is your focus for today?</h1>
+        <AddTask setChanged={setChanged} />
+      </div>
+      <div className="space"></div>
+      <div className="all-tasks">
+        {tasks.map((task, i) => (
+          <SingleTask
+            title={task.title}
+            id={task._id}
+            setChanged={setChanged}
+            key={i}
+          />
+        ))}
+      </div>
     </div>
   );
 }

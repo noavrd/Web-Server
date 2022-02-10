@@ -45,7 +45,7 @@ export default function AddTask({ setChanged }) {
           +
         </button>
       </div>
-      <div>{error}</div>
+      <div className="error">{error !== '' ? error : ' '}</div>
     </>
   );
 }

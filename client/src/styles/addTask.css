@@ -21,3 +21,11 @@
   width: 2vw;
   border-bottom: 1px solid black;
 }
+
+.error {
+  text-align: center;
+  font-size: 2.5vh;
+  margin-top: 1vh;
+  height: 2.5vh;
+  margin-bottom: 1.3vh;
+}

@@ -45,21 +45,26 @@ export default function SingleTask({ title, id, setChanged }) {
           </span>
         </div>
       ) : (
-        <div className="single-task">
+        <div className="single-task edit">
           <input
+            autoFocus
+            className="single-input"
             value={inputValue}
             onChange={(e) => {
               inputValue === '' &&
                 (e.target.value = e.target.value.charAt(0).toUpperCase());
               setInputValue(e.target.value);
             }}
+            onKeyPress={(e) => e.key === 'Enter' && updateHandler()}
           />
-          <i
-            className="fa-solid fa-floppy-disk click"
-            onClick={() => updateHandler()}></i>{' '}
-          <i
-            className="fa-solid fa-x click"
-            onClick={() => setUpdate(false)}></i>
+          <span>
+            <i
+              className="fa-solid fa-floppy-disk click"
+              onClick={() => updateHandler()}></i>{' '}
+            <i
+              className="fa-solid fa-x click"
+              onClick={() => setUpdate(false)}></i>
+          </span>
         </div>
       )}
     </div>

@@ -1,10 +1,11 @@
 .single-task {
   text-align: left;
-  margin-left: 30vw;
+  /* margin-left: 30vw; */
+  margin-left: 3.5vw;
   margin-top: 1vh;
   font-size: 3.5vh;
   display: grid;
-  grid-template-columns: 35vw 9vw;
+  grid-template-columns: 38vw 9vw;
 }
 
 .click {
@@ -13,21 +14,33 @@
 }
 
 .single-input {
-  width: 35vw;
+  width: 38vw;
   font-size: 3.5vh;
   border: none;
-  color: rgb(136, 130, 130);
+  color: rgba(226, 226, 226, 0.801);
+  background-color: transparent;
 }
-
 .single-input:focus {
   outline: none;
 }
 
 .edit {
-  border-bottom: 1px solid rgb(136, 130, 130);
-  width: 39vw;
+  border-bottom: 1px solid rgb(73, 70, 70);
+  width: 38vw;
 }
 
 .fa-x {
   color: brown;
+}
+
+@media only screen and (max-width: 768px) {
+  .single-task {
+    font-size: 3vh;
+    margin-top: 2vh;
+    grid-template-columns: 34vw 15vw;
+  }
+}
+
+.single-input {
+  width: 34vw;
 }

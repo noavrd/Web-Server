@@ -9,7 +9,7 @@ body {
   overflow-y: scroll; */
   overflow: hidden;
   background-color: white;
-  background-image: url('./642927.webp');
+  background-image: url('./purple-sunset-01.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -23,8 +23,10 @@ body {
 
 h1 {
   margin-top: 10vh;
-  font-size: 9vh;
-  text-align: center;
+  font-size: 8.3vh;
+  /* text-align: center; */
+  margin-left: 3vw;
+  max-width: 45vw;
 }
 
 .block {
@@ -44,8 +46,8 @@ h1 {
   margin-top: 4vh;
   overflow: auto;
   overflow-x: hidden;
-  width: 70vw;
-  height: 65vh;
+  width: 100vw;
+  height: 60vh;
   -ms-overflow-style: none;
   scrollbar-width: none;
   overflow-y: scroll;
@@ -54,3 +56,21 @@ h1 {
 .all-tasks::-webkit-scrollbar {
   display: none;
 }
+
+.total {
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(206, 203, 231, 0.603);
+  margin-left: 25vw;
+  background-color: rgba(46, 39, 39, 0.562);
+  margin-top: 2.5vh;
+  height: 95vh;
+
+  width: 50vw;
+}
+/* @media only screen and (max-width: 1000px) {
+  .total {
+    width: 50vw;
+    margin-left: 25vw;
+  }
+} */

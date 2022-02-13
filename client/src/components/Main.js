@@ -27,7 +27,7 @@ export default function Main() {
   return (
     <div className="total">
       <div className="block">
-        <h1>What is your focus for today?</h1>
+        <h1>To Do:</h1>
         <AddTask setChanged={setChanged} />
       </div>
       <div className="space"></div>

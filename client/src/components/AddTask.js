@@ -10,7 +10,6 @@ export default function AddTask({ setChanged }) {
 
   // Add new task
   const clickHandler = () => {
-    //Do this on backend
     if (newTask === '') {
       setError('Please Enter A Task');
       return;

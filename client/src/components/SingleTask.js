@@ -17,13 +17,20 @@ export default function SingleTask({ title, id, setChanged }) {
   };
 
   const updateHandler = () => {
-    axios
-      .put(`${BASE_URL}/updateTitle`, { _id: id, title: inputValue })
-      .then(() => {
-        setUpdate(false);
-        setChanged(true);
-      })
-      .catch((err) => console.log(err));
+    // Check if input value is only spaces / empty
+    if (inputValue.trim().length !== 0) {
+      axios
+        .put(`${BASE_URL}/updateTitle`, { _id: id, title: inputValue })
+        .then(() => {
+          setChanged(true);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      setInputValue(title);
+    }
+
+    // Remove display from edit
+    setUpdate(false);
   };
 
   useEffect(() => {

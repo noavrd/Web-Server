@@ -13,7 +13,6 @@ app.post('/add', async (req, res) => {
     await newTask.save();
     res.send('Title added successfully');
   } catch (err) {
-    console.log(err);
     res.status(500).send(err);
   }
 });
@@ -48,4 +47,5 @@ app.delete('/deleteTitle', async (req, res) => {
     res.status(500).send(err);
   }
 });
+
 module.exports = app;

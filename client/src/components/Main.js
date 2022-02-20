@@ -7,23 +7,24 @@ export default function Main() {
   const [tasks, setTasks] = useState([]);
   const [changed, setChanged] = useState(false);
 
-  useEffect(() => {
+  const getData = () => {
     axios
       .get(`${BASE_URL}/allTitles`)
       .then((result) => setTasks(result.data))
       .catch((err) => console.log(err));
+  };
+  useEffect(() => {
+    getData();
   }, []);
   console.log(tasks);
 
   useEffect(() => {
     if (changed) {
-      axios
-        .get(`${BASE_URL}/allTitles`)
-        .then((result) => setTasks(result.data))
-        .catch((err) => console.log(err));
+      getData();
       setChanged(false);
     }
   }, [changed]);
+
   return (
     <div className="total">
       <div className="block">
